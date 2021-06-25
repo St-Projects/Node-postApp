@@ -1,0 +1,16 @@
+<div class="container">
+            <form action="/rota_postagem/alterar/update" method="POST">
+            {{#each postagens}}
+                    <h3>ID: </h3>
+                    <input class="form-control" type="text" name="id" readonly="true" value="{{id}}">
+                    <br>
+                    <p>Título: </p>
+                    <input class="form-control" type="text" name="titulo" value="{{titulo}}">
+                    <p>Conteúdo: </p>
+                    <textarea class="form-control" name="conteudo" cols="30" rows="10">{{conteudo}}</textarea>
+                    <br>
+                    <input class="btn-success btn-block btn" type="submit" value="Alterar">
+            {{/each}}
+            </form>
+        <br>
+</div>

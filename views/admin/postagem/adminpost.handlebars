@@ -1,0 +1,46 @@
+<main class="container ">
+    <h1 class="text-center display-4">Lista de Postagens</h1>
+    <br><br><br>
+    <div class="card text-light" style="background-color: #0a4275;">
+        <div class="card-body row">
+            <h1 class="col-md">Cadastre uma nova postagem</h1>
+            <a class="col-md-2"  href="/rota_postagem/cadastro"><button class="btn btn-success btn-lg">Cadastre</button></a>
+        </div>
+    </div>
+    <br>
+    <div class="text-light card-body jumbotron" style="background-color: #0a4275;">
+        {{#each postagens}}
+        <div class="row ml-2">
+            <img class=" img" src="{{imagem}}" width="15%" height="15%" alt="{{titulo}}">
+            <div class="col-8">
+                <h2>{{titulo}}</h2>
+                <p>
+                    <script>
+                    function strReplace(myStr){
+                        var newStr = myStr.replace(/'/g, "");
+                        
+                        return newStr;
+                    }
+                    var conteudocru = decodeURIComponent("{{{conteudo}}}");
+                    var conteudotratado = strReplace(conteudocru);
+                    var conteudoFinalizado = conteudotratado.substr(0, 150);
+                    document.write(conteudoFinalizado + "...");
+                </script>
+                </p>
+                <p><script>
+                    var datajson = decodeURIComponent("{{{createdAt}}}")
+                    var data = new Date(datajson);
+                    var dataFormatada = data.toLocaleDateString();
+                    document.write("Data: " + dataFormatada);
+                </script></p>
+                <a href="/rota_postagem/deletar/{{id}}"><button class="btn-danger btn btn-lg col-md-3">Deletar</button></a>
+                <a href="/rota_postagem/alterar/{{id}}"><button class="btn-success btn btn-lg col-md-3">Alterar</button></a> 
+            </div>
+            {{else}}
+            <h2>Não há publicações registradas</h2>
+        </div>
+        <hr style="background-color: ivory;">
+        {{/each}}
+    </div>
+    <br>
+</main>

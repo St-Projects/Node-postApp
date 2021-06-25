@@ -1,0 +1,20 @@
+<div class="container">
+    {{#each postagens}}
+    <div class="row">
+        <h1 class="col-md-8">{{titulo}}</h1>
+    </div>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <p>{{conteudo}}</p>
+            <br><br>
+            <p><script>
+                    var datajson = decodeURIComponent("{{{createdAt}}}")
+                    var data = new Date(datajson);
+                    var dataFormatada = data.toLocaleDateString();
+                    document.write("Data: " + dataFormatada);
+            </script></p>
+        </div>
+    </div>
+    {{/each}}
+</div>

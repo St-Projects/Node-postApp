@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Realize sua postagem!</h1><br>
+    <div id="status" class="invisible">{{{errormessage}}}</div>
+    <div class="row">
+        <form class="form-group col-md-7" style="width: 100%;" action="/rota_postagem/cadastro/add" method="POST" enctype="multipart/form-data">
+            <input type="file" name="img">
+            <br><br>
+            <input class="form-control" placeholder="Título da Postagem" type="text" name="titulo">
+            <br>
+            <textarea placeholder="Conteúdo da sua postagem" class="form-control" type="text" name="conteudo" widht="300" rows="10"></textarea><br><br>
+            <input class="btn btn-block btn-success" type="submit" value="Fazer Postagem">
+            <br><br>
+        </form>
+        <img class="col-md-4" src="/public/img/mamaco_combinando.png" width="20%" height="30%" alt="mamaco_combine">
+    </div>
+</div>
